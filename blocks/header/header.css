@@ -1,0 +1,11 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+@media (max-width: 680px) {
+    .header {
+        margin-bottom: 42px;
+    }
+}
