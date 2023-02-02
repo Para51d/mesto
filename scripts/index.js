@@ -3,14 +3,16 @@ const popup = document.querySelector(".popup");
 const closeButton = popup.querySelector(".popup__button-close");
 
 let formElement = document.querySelector(".popup__container");
-let nameInput = document.querySelector(".popup__container_name");
-let jobInput = document.querySelector(".popup__container_info");
+let nameInput = document.querySelector(".popup__input_type_name");
+let jobInput = document.querySelector(".popup__input_type_info");
 let profileName = document.querySelector(".profile__username");
 let profileJob = document.querySelector(".profile__text");
 
 
 const toggleOpenPopup = () => {
     popup.classList.toggle("popup_opened");
+    nameInput.value = profileName.textContent; // Любовь, вы очень крутой ревьюер ! Спасибо за помощь !
+    jobInput.value = profileJob.textContent;
 };
 
 function handleFormSubmit(evt) {
