@@ -5,13 +5,18 @@
     line-height: 22px;
     letter-spacing: 0em;
     text-align: left;
+    max-width: 350px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 @media (max-width: 680px) {
     .profile__text {
+        max-width: 280px;
         font-size: 14px;
         line-height: 17px;
         text-align: center;
-        margin: 5px auto 33px auto;
+        margin: 5px auto 34px auto;
     }
 }

@@ -6,13 +6,9 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
+    border: none;
 }
 
 .place__heart:hover {
     opacity: .5;
-}
-
-.place__heart:active {
-    background-image: url(./../../../images/Heart\ active.svg);
-    opacity: 1;
 }
