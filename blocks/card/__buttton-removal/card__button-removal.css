@@ -1,0 +1,17 @@
+.card__button-removal {
+    width: 18px;
+    height: 19px;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background-image: url(./../../../images/Removal.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.card__button-removal:hover {
+    opacity: .6;
+}

@@ -25,56 +25,10 @@
             <button class="profile__add-button" type="button"></button>
         </section>
 
-        <section class="places">
-            <figure class="place">
-                <img class="place__image" src="./images/Baikal.jpg" alt="Закат на озере Байкал ">
-                <figcaption class="place__caption">
-                    <h2 class="place__text">Байкал</h2>
-                    <button class="place__heart" type="button"></button>
-                </figcaption>
-            </figure>
+        <section class="places"></section>
 
-            <figure class="place">
-                <img class="place__image" src="./images/Altai.jpg" alt="Алтайские горы, река и лес">
-                <figcaption class="place__caption">
-                    <h2 class="place__text">Алтай</h2>
-                    <button class="place__heart" type="button"></button>
-                </figcaption>
-            </figure>
-
-            <figure class="place">
-                <img class="place__image" src="./images/Koiva.jpg" alt="Река Койва и лес">
-                <figcaption class="place__caption">
-                    <h2 class="place__text">Койва</h2>
-                    <button class="place__heart" type="button"></button>
-                </figcaption>
-            </figure>
-
-            <figure class="place">
-                <img class="place__image" src="./images/Gora_Elbrus.jpg" alt="Гора Эльбрус на закате">
-                <figcaption class="place__caption">
-                    <h2 class="place__text">Гора Эльбрус</h2>
-                    <button class="place__heart" type="button"></button>
-                </figcaption>
-            </figure>
-
-            <figure class="place">
-                <img class="place__image" src="./images/Dombay.jpg" alt="Зеснеженная гора и лес">
-                <figcaption class="place__caption">
-                    <h2 class="place__text">Домбай</h2>
-                    <button class="place__heart" type="button"></button>
-                </figcaption>
-            </figure>
-
-            <figure class="place">
-                <img class="place__image" src="./images/Karachaevsk.jpg" alt="Разрушенная церковь на фоне гор и леса">
-                <figcaption class="place__caption">
-                    <h2 class="place__text">Карачаево-Черкессия</h2>
-                    <button class="place__heart" type="button"></button>
-                </figcaption>
-            </figure>
-        </section>
     </main>
+
     <footer class="footer">
         <p class="footer__info">© 2020 Mesto Russia</p>
     </footer>
@@ -91,8 +45,39 @@
                 <button class="popup__button-save" type="submit">Сохранить</button>
             </form>
         </div>
-
     </section>
+
+    <section class="popup popup_type_add-place">
+        <div class="popup__block">
+            <button class="popup__button-close" type="button"></button>
+            <h2 class="popup__header">Новое место</h2>
+            <form class="popup__container" name="editPlace">
+                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Название">
+                <input class="popup__input popup__input_type_image" type="text" name="image"
+                    placeholder="Ссылка на картинку">
+                <button class="popup__button-save" type="submit">Создать</button>
+            </form>
+        </div>
+    </section>
+
+    <section class="popup popup_type_image">
+        <figure class="popup__container popup__container_type_image">
+            <button class="popup__button-close"></button>
+            <img class="popup__image" src="#" alt="#">
+            <figcaption class="popup__figcaption"></figcaption>
+        </figure>
+    </section>
+
+    <template id="item">
+        <figure class="card">
+            <img class="card__image" src="#" alt="Фотография пользователя">
+            <div class="card__button-removal"></div>
+            <figcaption class="card__caption">
+                <h2 class="card__title"></h2>
+                <button class="card__button-like" type="button"></button>
+            </figcaption>
+        </figure>
+    </template>
 
     <script src="./scripts/index.js"></script>
 </body>
