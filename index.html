@@ -33,16 +33,22 @@
         <p class="footer__info">© 2020 Mesto Russia</p>
     </footer>
 
-    <section class="popup">
+    <section class="popup popup_type_profile">
         <div class="popup__block">
             <button class="popup__button-close" type="button"></button>
             <h2 class="popup__header">Редактировать профиль</h2>
-            <form class="popup__container" name="changeProfile">
-                <input class="popup__input popup__input_type_name" type="textarea" name="name" placeholder="Имя"
-                    value="Жак-Ив Кусто">
-                <input class="popup__input popup__input_type_info" type="textarea" name="job" placeholder="О себе"
-                    value="Исследователь океана">
-                <button class="popup__button-save" type="submit">Сохранить</button>
+            <form class="form" name="profileForm" novalidate>
+                <div class="form__section">
+                    <input class="form__input form__input_name" type="text" name="input name" required minlength="2"
+                        maxlength="40" placeholder="Имя" value="Жак-Ив Кусто">
+                    <span class="form__input-error form__input-error_active" id="name"></span>
+                </div>
+                <div class="form__section">
+                    <input class="form__input form__input_info" type="text" name="input info" required minlength="2"
+                        maxlength="200" placeholder="О себе" value="Исследователь океана">
+                    <span class="form__input-error form__input-error_active" id="info"></span>
+                </div>
+                <button class="form__save" type="submit" disabled="true">Сохранить</button>
             </form>
         </div>
     </section>
@@ -51,17 +57,24 @@
         <div class="popup__block">
             <button class="popup__button-close" type="button"></button>
             <h2 class="popup__header">Новое место</h2>
-            <form class="popup__container" name="editPlace">
-                <input class="popup__input popup__input_type_name" type="text" name="name" placeholder="Название">
-                <input class="popup__input popup__input_type_image" type="text" name="image"
-                    placeholder="Ссылка на картинку">
-                <button class="popup__button-save" type="submit">Создать</button>
+            <form class="form" name="cardsForm" novalidate>
+                <div class="form__section">
+                    <input class="form__input form__input_title" type="text" name="title" required minlength="2"
+                        maxlength="30" placeholder="Название">
+                    <span class="form__input-error form__input-error_active" id="title"></span>
+                </div>
+                <div class="form__section">
+                    <input class="form__input form__input_link" type="url" name="link" required
+                        placeholder="Ссылка на картинку">
+                    <span class="form__input-error form__input-error_active" id="link"></span>
+                </div>
+                <button class="form__save" type="submit" disabled="true">Создать</button>
             </form>
         </div>
     </section>
 
     <section class="popup popup_type_image">
-        <figure class="popup__container popup__container_type_image">
+        <figure class="popup__image-container">
             <button class="popup__button-close"></button>
             <img class="popup__image" src="#" alt="#">
             <figcaption class="popup__figcaption"></figcaption>
@@ -78,8 +91,9 @@
             </figcaption>
         </figure>
     </template>
-    
+
     <script src="./scripts/constants.js"></script>
+    <script src="./scripts/validate.js"></script>
     <script src="./scripts/index.js"></script>
 </body>
 
