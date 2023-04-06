@@ -35,3 +35,5 @@ const options = {
     inputErrorSelector: ".form__input-error",
     disabledButtonClass: "form__save_inactive",
 };
+
+export { initialCards, options };
