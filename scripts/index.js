@@ -26,8 +26,8 @@ const popupTypeImage = document.querySelector(".popup_type_image");
 const imgPopupTypeImage = popupTypeImage.querySelector(".popup__image");
 const commentPopupTypeImage = popupTypeImage.querySelector(".popup__figcaption");
 
-const CardImg = document.querySelector(".card__image");
-const CardTitle = document.querySelector(".card__title");
+const cardImg = document.querySelector(".card__image");
+const cardTitle = document.querySelector(".card__title");
 const allPopups = document.querySelectorAll(".popup")
 const allCloseButtons = document.querySelectorAll(".popup__button-close");
 
@@ -118,13 +118,13 @@ buttonEditProfile.addEventListener('click', function () {
     openPopup(popupEditProfile);
     namePopupInput.value = profileNameDefault.textContent;
     jobPopupInput.value = profileJobDefault.textContent;
-
-    profileValidation.reset();
+    profileValidation.resetValidation();
 });
 
 // открытие попап добавления карточки нажатием на кнопку добавления
 buttonProfileCardEdit.addEventListener('click', function () {
     openPopup(popupTypeAddCard);
+    formCardValidation.resetValidation();
 });
 
 formEditProfile.addEventListener('submit', handleFormProfileSubmit);
