@@ -19,23 +19,20 @@ class FormValidator {
         });
     }
 
-    // функция, которая добавляет класс с ошибкой
     _showInputError() {
         const errorElement = this._inputElement.closest(this._inputSectionSelector).querySelector(this._inputErrorSelector);
         this._inputElement.classList.add(this._inputInvalidClass);
         errorElement.classList.add(this._inputErrorClass);
-        errorElement.textContent = this._inputElement.validationMessage; // сообщение об ошибке
+        errorElement.textContent = this._inputElement.validationMessage;
     }
 
-    // функция, которая удаляет класс с ошибкой
     _hideInputError() {
-        const errorElement = this._inputElement.closest(this._inputSectionSelector).querySelector(this._inputErrorSelector); // находим элемент ошибки
+        const errorElement = this._inputElement.closest(this._inputSectionSelector).querySelector(this._inputErrorSelector);
         this._inputElement.classList.remove(this._inputInvalidClass);
-        errorElement.classList.remove(this._inputErrorClass); //
-        errorElement.textContent = ''; // cкрываем ошибку
+        errorElement.classList.remove(this._inputErrorClass);
+        errorElement.textContent = '';
     }
 
-    // проверка на валидность поля. Принимает inputElement
     _isValid(inputElement) {
         if (!this._inputElement.validity.valid) {
             this._showInputError(inputElement);
@@ -48,8 +45,8 @@ class FormValidator {
         const isFormValid = this._formElement.checkValidity();
         this._buttonElement.disabled = !isFormValid;
         this._buttonElement.classList.toggle(
-            this._disabledButtonClass, // добавляем класс неактивной кнопки
-            !isFormValid // если валидация не пройдена
+            this._disabledButtonClass,
+            !isFormValid
         );
     }
 

@@ -6,7 +6,6 @@ class Card {
         this._templateSelector = templateSelector;
     }
 
-    // добавляем классу метод _getTemplate, который найдёт template-элемент, извлечет его содержимое и в содержимом найдёт элемент с классом card, клонирует его и вернёт клонированный элемент
     _getTemplate() {
         const cardElement = document
             .querySelector(this._templateSelector)
@@ -16,7 +15,6 @@ class Card {
         return cardElement;
     }
 
-    // добавляем классу метод, который вставит данные в разметку и подготовит карточку к публикации
     generateCard() {
         this._element = this._getTemplate();
 
@@ -34,17 +32,14 @@ class Card {
         return this._element;
     }
 
-    // лайк карточки
     _likeCard() {
         this._elementLike.classList.toggle("card__button-like_active");
     }
 
-    // удаление карточки
     _removalCard() {
         this._element.remove();
     }
 
-    // добавление всех слушателей 
     _setEventListeners() {
         this._elementImage.addEventListener("click", () => {
             this._increasePopupImage(this._name, this._link);

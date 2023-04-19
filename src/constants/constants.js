@@ -36,4 +36,16 @@ const options = {
     disabledButtonClass: "form__save_inactive",
 };
 
+export const buttonEditProfile = document.querySelector(".profile__edit-button");
+export const buttonProfileCardEdit = document.querySelector(".profile__add-button");
+
+export const popupEditProfile = document.querySelector(".popup_type_profile");
+export const formEditProfile = popupEditProfile.querySelector(".form");
+export const namePopupInput = popupEditProfile.querySelector(".form__input_name");
+export const jobPopupInput = popupEditProfile.querySelector(".form__input_info");
+
+export const popupTypeAddCard = document.querySelector(".popup_type_add-place");
+export const formPopupTypeAddCard = popupTypeAddCard.querySelector(".form");
+export const placeCards = document.querySelector(".places");
+
 export { initialCards, options };

@@ -4,17 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Места России</title>
-    <link rel="stylesheet" type="text/css" href="./pages/index.css">
+    <title>Mesto</title>
 </head>
 
 <body class="page">
     <header class="header">
-        <img class="header__logo" src="./images/Logo.svg" alt="Лого">
+        <img class="header__logo" src="<%=require('./images/Logo.svg')%>" alt="Лого">
     </header>
     <main class="main">
         <section class="profile">
-            <img class="profile__avatar" src="./images/Foto.jpg" alt="Аватарка">
+            <img class="profile__avatar" src="<%=require('./images/Foto.jpg')%>" alt="Аватарка">
             <div class="profile__info">
                 <div class="profile__person">
                     <h1 class="profile__username">Жак-Ив Кусто</h1>
@@ -39,13 +38,13 @@
             <h2 class="popup__header">Редактировать профиль</h2>
             <form class="form" name="profileForm" novalidate>
                 <div class="form__section">
-                    <input id="name" class="form__input form__input_name" type="text" name="input name" required
-                        minlength="2" maxlength="40" placeholder="Имя" value="Жак-Ив Кусто">
+                    <input id="name" class="form__input form__input_name" type="text" name="name" required minlength="2"
+                        maxlength="40" placeholder="Имя" value="Жак-Ив Кусто">
                     <span class="form__input-error_active form__input-error" id="error-name"></span>
                 </div>
                 <div class="form__section">
-                    <input id="info" class="form__input form__input_info" type="text" name="input info" required
-                        minlength="2" maxlength="200" placeholder="О себе" value="Исследователь океана">
+                    <input id="info" class="form__input form__input_info" type="text" name="job" required minlength="2"
+                        maxlength="200" placeholder="О себе" value="Исследователь океана">
                     <span class="form__input-error_active form__input-error" id="error-info"></span>
                 </div>
                 <button class="form__save" type="submit" disabled="true">Сохранить</button>
@@ -59,7 +58,7 @@
             <h2 class="popup__header">Новое место</h2>
             <form class="form" name="cardsForm" novalidate>
                 <div class="form__section">
-                    <input id="place" class="form__input form__input_title" type="text" name="title" required
+                    <input id="place" class="form__input form__input_title" type="text" name="name" required
                         minlength="2" maxlength="30" placeholder="Название">
                     <span class="form__input-error_active form__input-error" id="error-title"></span>
                 </div>
@@ -91,11 +90,6 @@
             </figcaption>
         </figure>
     </template>
-
-    <script src="./scripts/constants.js" type="module"></script>
-    <script src="./scripts/FormValidator.js" type="module"></script>
-    <script src="./scripts/Card.js" type="module"></script>
-    <script src="./scripts/index.js" type="module"></script>
 </body>
 
 </html>
