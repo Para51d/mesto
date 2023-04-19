@@ -3,10 +3,10 @@ import "./index.css";
 import { Card } from "../components/Card.js";
 import { initialCards, options } from "../constants/constants.js";
 import { FormValidator } from "../components/FormValidator.js";
-import { Section } from '../components/Section.js';
-import { PopupWithForm } from '../components/PopupWithForm.js';
-import { PopupWithImage } from '../components/PopupWithImage.js';
-import { UserInfo } from '../components/UserInfo.js';
+import { Section } from "../components/Section.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { PopupWithImage } from "../components/PopupWithImage.js";
+import { UserInfo } from "../components/UserInfo.js";
 
 import {
     buttonEditProfile,
@@ -16,7 +16,7 @@ import {
     jobPopupInput,
     formPopupTypeAddCard,
     placeCards
-} from '../constants/constants.js';
+} from "../constants/constants.js";
 
 // UserInfo, который отвечает за управление отображением информации о пользователе на странице//
 const user = new UserInfo({ nameSelector: ".profile__username", jobSelector: ".profile__text" });
@@ -55,7 +55,7 @@ function popupProfileOpen({ name, job }) {
     popupProfile.open();
 }
 
-buttonEditProfile.addEventListener('click', () => {
+buttonEditProfile.addEventListener("click", () => {
     popupProfileOpen(user.getUserInfo());
     profileValidation.resetValidation();
 })
@@ -68,13 +68,13 @@ const popupAdd = new PopupWithForm(".popup_type_add-place", ({ name, link }) => 
 popupAdd.setEventListeners();
 
 
-buttonProfileCardEdit.addEventListener('click', () => {
+buttonProfileCardEdit.addEventListener("click", () => {
     popupAdd.open();
     formCardValidation.resetValidation();
 })
 
 // попап просмотра изображения //
-const popupViewImage = new PopupWithImage('.popup_type_image')
+const popupViewImage = new PopupWithImage(".popup_type_image")
 popupViewImage.setEventListeners();
 
 function viewPopupImagePic(name, link) {
