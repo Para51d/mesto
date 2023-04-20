@@ -17,20 +17,20 @@ class Popup {
 
     _handleEscClose = (e) => {
         if (e.key === "Escape") {
-            this.close(this._popup);
+            this.close();
         }
     };
 
     _handleOverlayClose = (e) => {
         if (e.target.classList.contains("popup_opened")) {
-            this.close(this._popup);
+            this.close();
         }
     };
 
     setEventListeners() {
         this._popup.addEventListener("click", (e) => {
             if (e.target.classList.contains("popup") || e.target.classList.contains("popup__button-close")) {
-                this.close(this._popup);
+                this.close();
             }
         });
     }

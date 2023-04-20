@@ -4,8 +4,8 @@ class PopupWithImage extends Popup {
     constructor(popupSelector) {
         super(popupSelector);
 
-        this._image = document.querySelector(".popup__image");
-        this._imageFigcaption = document.querySelector(".popup__figcaption");
+        this._image = this._popup.querySelector(".popup__image");
+        this._imageFigcaption = this._popup.querySelector(".popup__figcaption");
     }
 
     open(name, link) {
