@@ -8,10 +8,8 @@ class UserInfo {
         return {
             name: this._userName.textContent,
             job: this._userJob.textContent,
-
         };
     }
-
 
     setUserInfo({ name, job }) {
         this._userName.textContent = name;
