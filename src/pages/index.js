@@ -47,8 +47,6 @@ const popupProfile = new PopupWithForm(".popup_type_profile", (inputs) => {
 popupProfile.setEventListeners();
 
 function popupProfileOpen({ name, job }) {
-    console.log(name);
-    console.log(job);
     namePopupInput.value = name;
     jobPopupInput.value = job;
 
