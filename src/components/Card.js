@@ -72,9 +72,9 @@ class Card {
         this._element = this._getTemplate();
 
         this._imageElement = this._element.querySelector(".card__image");
-        this._imageElement.src = this._image;
-        this._imageElement.alt = this._title;
-        this._element.querySelector(".card__title").textContent = this._title;
+        this._imageElement.src = this._link;
+        this._imageElement.alt = this._name;
+        this._element.querySelector(".card__title").textContent = this._name;
         this._likeButton = this._element.querySelector(".card__button-like");
         this._likeCounter = this._element.querySelector(".card__like-counter");
         this._buttonDelete = this._element.querySelector(".card__button-removal");
