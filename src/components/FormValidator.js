@@ -8,6 +8,7 @@ class FormValidator {
         this._inputErrorSelector = options.inputErrorSelector;
         this._inputSectionSelector = options.inputSectionSelector;
         this._formElement = formElement;
+        this._inputList = Array.from(this._formElement.querySelectorAll(options.inputSelector));
     }
 
     resetValidation = () => {
@@ -51,7 +52,6 @@ class FormValidator {
     }
 
     _setEventListeners() {
-        this._inputList = this._formElement.querySelectorAll(this._inputSelector);
         this._inputList.forEach((inputElement) => {
             inputElement.addEventListener("input", () => {
                 this._inputElement = inputElement;

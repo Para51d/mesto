@@ -14,15 +14,15 @@
     <main class="main">
         <section class="profile">
             <div class="profile__avatar-unit">
-                <img class="profile__avatar" src="<%=require('./images/Foto.jpg')%>" alt="Аватарка">
+                <img class="profile__avatar" alt="Аватарка">
                 <div class="profile__change-avatar"></div>
             </div>
             <div class="profile__info">
                 <div class="profile__person">
-                    <h1 class="profile__username">Жак-Ив Кусто</h1>
+                    <h1 class="profile__username"></h1>
                     <button class="profile__edit-button" type="button"></button>
                 </div>
-                <p class="profile__text">Исследователь океана</p>
+                <p class="profile__text"></p>
             </div>
             <button class="profile__add-button" type="button"></button>
         </section>
@@ -39,15 +39,15 @@
         <div class="popup__block">
             <button class="popup__button-close" type="button"></button>
             <h2 class="popup__header">Редактировать профиль</h2>
-            <form class="form" name="profileForm" novalidate>
+            <form class="form form__profile" name="profileForm" novalidate>
                 <div class="form__section">
                     <input id="name" class="form__input form__input_name" type="text" name="name" required minlength="2"
-                        maxlength="40" placeholder="Имя" value="Жак-Ив Кусто">
+                        maxlength="40" placeholder="Имя">
                     <span class="form__input-error_active form__input-error" id="error-name"></span>
                 </div>
                 <div class="form__section">
-                    <input id="info" class="form__input form__input_info" type="text" name="job" required minlength="2"
-                        maxlength="200" placeholder="О себе" value="Исследователь океана">
+                    <input id="info" class="form__input form__input_info" type="text" name="about" required
+                        minlength="2" maxlength="200" placeholder="О себе">
                     <span class="form__input-error_active form__input-error" id="error-info"></span>
                 </div>
                 <button class="form__save" type="submit" disabled="true">Сохранить</button>
@@ -59,7 +59,7 @@
         <div class="popup__block">
             <button class="popup__button-close" type="button"></button>
             <h2 class="popup__header">Новое место</h2>
-            <form class="form" name="cardsForm" novalidate>
+            <form class="form form__add-card" name="cardsForm" novalidate>
                 <div class="form__section">
                     <input id="place" class="form__input form__input_title" type="text" name="name" required
                         minlength="2" maxlength="30" placeholder="Название">
@@ -87,13 +87,13 @@
         <div class="popup__block">
             <button class="popup__button-close" type="button"></button>
             <h2 class="popup__header">Обновить аватар</h2>
-            <form class="form" name="avatarForm" novalidate>
+            <form class="form form__avatar" name="avatarForm" novalidate>
                 <div class=" form__section">
-                    <input id="link" class="form__input form__input_link" type="url" name="link" required
+                    <input id="link" class="form__input form__input_link" type="url" name="avatar" required
                         placeholder="Ссылка на картинку">
                     <span class="form__input-error_active form__input-error" id="error-link"></span>
                 </div>
-                <button class="form__save" type="submit" disabled="true">Создать</button>
+                <button class="form__save" type="submit" disabled="true">Сохранить</button>
             </form>
         </div>
     </section>
@@ -101,8 +101,10 @@
     <section class="popup popup_type_delete-card">
         <div class="popup__block">
             <button class="popup__button-close" type="button"></button>
-            <h2 class="popup__header">Вы уверены</h2>
-            <button class="form__save" type="submit">Да</button>
+            <h2 class="popup__header">Вы уверены?</h2>
+            <form class="form form__delete-card" name="confirmForm" novalidate>
+                <button class="form__save" type="submit">Да</button>
+            </form>
         </div>
     </section>
 

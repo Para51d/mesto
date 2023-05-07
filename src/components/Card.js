@@ -1,52 +1,91 @@
 class Card {
-    constructor(data, templateSelector, increasePopupImage) {
-        this._name = data.name;
-        this._link = data.link;
-        this._increasePopupImage = increasePopupImage;
-        this._templateSelector = templateSelector;
+    constructor({ likes, name, link, _id, owner }, templateElement, handleCardClick, handleLikeClick, handleDeleteClick, userId) {
+        this._name = name;
+        this._link = link;
+        this._cardId = _id;
+        this._likes = likes;
+        this._userId = userId;
+        this._templateElement = templateElement;
+        this._handleCardClick = handleCardClick;
+        this._handleLikeClick = handleLikeClick;
+        this._handleDeleteClick = handleDeleteClick;
+        this._isOwner = owner._id === userId;
+        this._isLiked = this._checkUserLike();
     }
 
     _getTemplate() {
-        const cardElement = document
-            .querySelector(this._templateSelector)
-            .content.querySelector(".card")
+        return this._templateElement
+            .querySelector('.card')
             .cloneNode(true);
-
-        return cardElement;
     }
+
+    _handleLikeCard() {
+        this._handleLikeClick(this._cardId, this._isLiked, this);
+    }
+
+    _checkUserLike() {
+        return this._likes.some(owner => owner._id === this._userId);
+    }
+
+    _toggleLikeButtonState(isLiked) {
+        if (isLiked) {
+            this._likeButton.classList.add("card__button-like_active");
+        } else {
+            this._likeButton.classList.remove("card__button-like_active");
+        }
+    }
+
+    checkLike(likes) {
+        if (likes) {
+            this._likes = likes;
+            this._isLiked = this._checkUserLike();
+        }
+        this._likeCounter.textContent = this._likes.length;
+        this._toggleLikeButtonState(this._isLiked);
+    }
+
+    blockLikeButton(isBlocked = true) {
+        this._likeButton.disabled = isBlocked;
+    }
+
+    handleDeleteCard() {
+        this._element.remove();
+        this._element = null;
+    }
+
+    _setEventListeners() {
+        this._imageElement.addEventListener('click', () => {
+            this._handleCardClick(this._imageElement);
+        });
+        this._likeButton.addEventListener('click', () => {
+            this._handleLikeCard();
+        });
+        if (this._isOwner) {
+            this._buttonDelete.addEventListener('click', () => {
+                this._handleDeleteClick(this._cardId, this);
+            });
+        }
+    }
+
 
     generateCard() {
         this._element = this._getTemplate();
 
-        this._elementImage = this._element.querySelector(".card__image");
-        this._elementName = this._element.querySelector(".card__title");
-        this._elementLike = this._element.querySelector(".card__button-like");
-        this._elementTrash = this._element.querySelector(".card__button-removal");
-
+        this._imageElement = this._element.querySelector(".card__image");
+        this._imageElement.src = this._image;
+        this._imageElement.alt = this._title;
+        this._element.querySelector(".card__title").textContent = this._title;
+        this._likeButton = this._element.querySelector(".card__button-like");
+        this._likeCounter = this._element.querySelector(".card__like-counter");
+        this._buttonDelete = this._element.querySelector(".card__button-removal");
+        this._likeCounter.textContent = `${this._likes.length}`;
+        if (!this._isOwner) {
+            this._buttonDelete.remove();
+        }
+        this.checkLike();
         this._setEventListeners();
 
-        this._elementImage.src = this._link;
-        this._elementImage.alt = this._name;
-        this._elementName.textContent = this._name;
-
         return this._element;
-    }
-
-    _likeCard() {
-        this._elementLike.classList.toggle("card__button-like_active");
-    }
-
-    _removalCard() {
-        this._element.remove();
-    }
-
-    _setEventListeners() {
-        this._elementImage.addEventListener("click", () => {
-            this._increasePopupImage(this._name, this._link);
-        });
-
-        this._elementLike.addEventListener("click", () => this._likeCard());
-        this._elementTrash.addEventListener("click", () => this._removalCard());
     }
 }
 

@@ -13,8 +13,10 @@
     background-position: center;
     opacity: 0;
     cursor: pointer;
+
 }
 
 .profile__change-avatar:hover {
     opacity: 1;
+
 }
