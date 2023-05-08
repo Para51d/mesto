@@ -14,13 +14,13 @@ export const buttonProfileCardEdit = document.querySelector(".profile__add-butto
 export const buttonChangeAvatar = document.querySelector(".profile__change-avatar");
 
 export const popupEditAvatar = ".popup_type_change-avatar";
-export const formPopupChangeAvatar = document.querySelector(".form__avatar");
+export const formPopupChangeAvatar = document.querySelector(".form-avatar");
 
 export const popupProfileSection = ".popup_type_profile";
-export const formEditProfile = document.querySelector(".form__profile");
+export const formEditProfile = document.querySelector(".form-profile");
 
 export const popupTypeAddPlace = ".popup_type_add-place";
-export const formPopupTypeAddCard = document.querySelector(".form__add-card");
+export const formPopupTypeAddCard = document.querySelector(".form-add-card");
 export const placeCards = ".places";
 export const popupWithConfirmation = ".popup_type_delete-card";
 export const popupIncreaseImage = ".popup_type_image";
