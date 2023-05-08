@@ -58,7 +58,7 @@ const handleSaveProfile = (data) => {
     api.editUserInfo(data)
         .then(res => {
             userInfo.setUserInfo(res);
-            popupEditProfile.close();
+            popupEditProfile.close()
         })
         .catch(error => console.log(`Ошибка: ${error}`))
         .finally(() => popupEditProfile.blockButton('Сохранить', false));
@@ -105,8 +105,9 @@ const handleClickDeleteButton = (cardId, card) => {
     popupWithDeleteConfirmation.open();
 };
 
-const handleCardClick = (imageElement) => {
-    popupWithImage.open(imageElement);
+//открытие попапа с увеличенной картинкой
+const handleCardClick = (name, link) => {
+    popupWithPic.open(name, link);
 };
 
 //отрисовка и добавление новой карточки
@@ -121,8 +122,8 @@ const cardList = new Section(renderCard, placeCards);
 const popupWithDeleteConfirmation = new PopupWithConfirmation(popupWithConfirmation);
 popupWithDeleteConfirmation.setEventListeners();
 
-const popupWithImage = new PopupWithImage(popupIncreaseImage);
-popupWithImage.setEventListeners();
+const popupWithPic = new PopupWithImage(popupIncreaseImage);
+popupWithPic.setEventListeners();
 
 const popupTypeAddCard = new PopupWithForm(popupTypeAddPlace, handleAddCard);
 popupTypeAddCard.setEventListeners();

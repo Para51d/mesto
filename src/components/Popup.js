@@ -1,17 +1,17 @@
 class Popup {
     constructor(popupSelector) {
         this._popup = document.querySelector(popupSelector);
-        this._keyHandler = this._handleEscClose.bind(this);
+        this._keyboardHandler = this._handleEscClose.bind(this);
     }
 
     open() {
         this._popup.classList.add("popup_opened");
-        document.addEventListener("keydown", this._keyHandler);
+        document.addEventListener("keydown", this._keyboardHandler);
     }
 
     close() {
         this._popup.classList.remove("popup_opened");
-        document.removeEventListener("keydown", this._keyHandler);
+        document.removeEventListener("keydown", this._keyboardHandler);
     }
 
     _handleEscClose = (e) => {

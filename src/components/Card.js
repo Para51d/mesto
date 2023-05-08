@@ -55,7 +55,7 @@ class Card {
 
     _setEventListeners() {
         this._imageElement.addEventListener('click', () => {
-            this._handleCardClick(this._imageElement);
+            this._handleCardClick(this._name, this._link);
         });
         this._likeButton.addEventListener('click', () => {
             this._handleLikeCard();
@@ -79,6 +79,7 @@ class Card {
         this._likeCounter = this._element.querySelector(".card__like-counter");
         this._buttonDelete = this._element.querySelector(".card__button-removal");
         this._likeCounter.textContent = `${this._likes.length}`;
+
         if (!this._isOwner) {
             this._buttonDelete.remove();
         }
